@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/data_card_main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="8dp"
+    android:padding="16dp"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginTop="8dp">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="5">
+
+        <TextView
+            android:id="@+id/data_card_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:layout_marginLeft="8dp"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:text="Saransh"/>
+
+        <TextView
+            android:id="@+id/data_card_age"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:text="25"/>
+
+        <ImageView
+            android:id="@+id/data_card_img"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:scaleType="centerCrop"
+            android:layout_weight="1"
+            android:src="@drawable/not_available"/>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
