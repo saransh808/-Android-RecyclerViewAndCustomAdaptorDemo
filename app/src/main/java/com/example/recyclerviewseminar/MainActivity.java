@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     EditText etUrl;
     Button btnAdd;
 
+    Button btnShowList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(validateAndAddData(etName, etAge, etUrl)){
                     Toast.makeText(getApplicationContext(), "Adding to Data", Toast.LENGTH_LONG).show();
+                    resetInput();
                     Intent i = new Intent(getApplicationContext(), CustomRecyclerView.class);
                     startActivity(i);
 
@@ -40,6 +43,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnShowList = findViewById(R.id.btn_show_list);
+        btnShowList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "Showing List", Toast.LENGTH_LONG).show();
+                resetInput();
+                Intent i = new Intent(getApplicationContext(), CustomRecyclerView.class);
+                startActivity(i);
+            }
+        });
+
+    }
+
+    private void resetInput() {
+        etName.setText("");
+        etAge.setText("");
+        etUrl.setText("");
     }
 
     private boolean validateAndAddData(EditText etName, EditText etAge, EditText etUrl) {

@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -36,6 +37,12 @@ public class CustomDataAdaptor extends RecyclerView.Adapter<CustomDataAdaptor.Cu
         String name = dataList.get(position).getName();
         holder.data_card_name.setText(name);
         holder.data_card_age.setText(dataList.get(position).getAge().toString());
+        if(dataList.get(position).getImgUrl()!=null && !dataList.get(position).getImgUrl().isEmpty()){
+//            Picasso.get().load(dataList.get(position).getImgUrl()).into(holder.data_card_img);
+            CustomImageHandler handler = new CustomImageHandler(dataList.get(position).getImgUrl(), holder.data_card_img);
+            handler.execute();
+        }
+
 
         holder.data_card_main.setOnClickListener(new View.OnClickListener() {
             @Override
