@@ -38,9 +38,9 @@ public class CustomDataAdaptor extends RecyclerView.Adapter<CustomDataAdaptor.Cu
         holder.data_card_name.setText(name);
         holder.data_card_age.setText(dataList.get(position).getAge().toString());
         if(dataList.get(position).getImgUrl()!=null && !dataList.get(position).getImgUrl().isEmpty()){
-//            Picasso.get().load(dataList.get(position).getImgUrl()).into(holder.data_card_img);
-            CustomImageHandler handler = new CustomImageHandler(dataList.get(position).getImgUrl(), holder.data_card_img);
-            handler.execute();
+            Picasso.get().load(dataList.get(position).getImgUrl()).into(holder.data_card_img);
+//            CustomImageHandler handler = new CustomImageHandler(dataList.get(position).getImgUrl(), holder.data_card_img);
+//            handler.execute();
         }
 
 
